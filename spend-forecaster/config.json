@@ -1,0 +1,13 @@
+{
+  "_comment": "Fallback baselines for typical out-of-pocket per outing (used only when there isn't enough YNAB history to learn the real average). The user's notes: shows ~ parking-split (~$15) + gas (~$10) + maybe a drink (~$13); food/merch are occasional add-ons, not baseline.",
+  "lookaheadDays": 21,
+  "costs": {
+    "concert": 40,
+    "party": 35,
+    "date": 50,
+    "friends": 35
+  },
+  "discretionaryCategoryNames": [],
+  "earmark": true,
+  "coverFrom": ""
+}
