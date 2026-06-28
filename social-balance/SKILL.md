@@ -12,7 +12,7 @@ Partner = girlfriend; her calendar is labeled "Partner": <CALENDAR_ID>. Friend/s
 ALERTS topic (write): curl -d "..." https://ntfy.sh/<NTFY_ALERTS_TOPIC>
 
 STEPS (run EVERY day)
-1. REINA RECENCY = days since most recent of: a completed FlowSavvy task titled "reina"/"Partner time" (list_items query "reina" completed=true), or a past event on the Partner calendar.
+1. REINA RECENCY = days since most recent of: a completed FlowSavvy task titled "partner"/"Partner time" (list_items query "partner" completed=true), or a past event on the Partner calendar.
 2. FRIEND RECENCY = days since most recent of: a completed "Friends" task, or a past event on Fun/Concerts/Partiful/AXS.
 3. OVERDUE-CHECK on planned tasks: via get_schedule, if a "Partner time" or "Friends" task was scheduled earlier today and is still incomplete with its time passed → POST one gentle line: "Did your Partner time happen? check it off in FlowSavvy if so." (Once per task per day.)
 
