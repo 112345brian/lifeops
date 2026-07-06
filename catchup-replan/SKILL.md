@@ -8,7 +8,7 @@ You are The user's "catch-up" re-planner. You run every 20 minutes but do NOTHIN
 FLOWSAVVY connector tools: mcp__<FLOWSAVVY_CONNECTOR>__* (list_items, update_task, recalculate). Use Bash + curl for ntfy.
 
 TIMEZONE: America/Los_Angeles.
-STATE FILE: C:\Users\user\.claude\scheduled-tasks\catchup-replan\state.json — {"lastHandled":<unix>}. Create with 0 if missing.
+STATE FILE: ~/.claude/scheduled-tasks/catchup-replan/state.json — {"lastHandled":<unix>}. Create with 0 if missing.
 NTFY signal: https://ntfy.sh/<NTFY_SIGNAL_TOPIC> ; alerts (write): https://ntfy.sh/<NTFY_ALERTS_TOPIC>
 
 STEPS

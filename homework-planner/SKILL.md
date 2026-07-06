@@ -9,7 +9,7 @@ FLOWSAVVY connector tools: mcp__<FLOWSAVVY_CONNECTOR>__* (list_items, get_schedu
 
 TIMEZONE: America/Los_Angeles. Establish today's date.
 ALERTS topic (write): curl -d "..." https://ntfy.sh/<NTFY_ALERTS_TOPIC>
-STATE FILE: C:\Users\user\.claude\scheduled-tasks\homework-planner\state.json — {"alerted":[<taskIds already alerted>]}. Create if missing. Used to avoid repeating the same alert daily.
+STATE FILE: ~/.claude/scheduled-tasks/homework-planner/state.json — {"alerted":[<taskIds already alerted>]}. Create if missing. Used to avoid repeating the same alert daily.
 
 STEPS
 1. list_items itemType=task listId=147765 completed=false → upcoming assignments with dueDateTime, durationMinutes, progressMinutes.

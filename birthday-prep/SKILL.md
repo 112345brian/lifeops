@@ -7,9 +7,9 @@ You keep The user ahead of the birthdays that matter to him. Each day you check 
 
 TIMEZONE: America/Los_Angeles. Establish today's date.
 
-BIRTHDAYS CONFIG: C:\Users\user\.claude\scheduled-tasks\birthday-prep\birthdays.json — a JSON object with a "people" array; each entry is {name, date:"MM-DD", giftLeadDays (default 14), needsGift (bool, default true)}. If the file is missing or "people" is empty, do nothing.
+BIRTHDAYS CONFIG: ~/.claude/scheduled-tasks/birthday-prep/birthdays.json — a JSON object with a "people" array; each entry is {name, date:"MM-DD", giftLeadDays (default 14), needsGift (bool, default true)}. If the file is missing or "people" is empty, do nothing.
 
-STATE FILE: C:\Users\user\.claude\scheduled-tasks\birthday-prep\state.json — {"created":["<name>-<year>-gift", "<name>-<year>-dayof", ...]}. Used to avoid creating the same task twice. Create empty if missing.
+STATE FILE: ~/.claude/scheduled-tasks/birthday-prep/state.json — {"created":["<name>-<year>-gift", "<name>-<year>-dayof", ...]}. Used to avoid creating the same task twice. Create empty if missing.
 
 STEPS
 1. Load birthdays.json and state.json. If no people, stop.
