@@ -9,7 +9,7 @@ TIMEZONE: America/Los_Angeles.
 
 HOW CHORES ARE TAGGED: each chore task has a tag in its notes of the form [cycle:Nd] where N is the interval in days (e.g. [cycle:10d] = repeat 10 days after completion). Only tasks with this tag are managed here.
 
-STATE FILE: C:\Users\user\.claude\scheduled-tasks\chore-cycler\state.json — {"lastRunUtc":"<iso>","processedIds":[]}. Create with lastRunUtc = 24h ago and empty processedIds if missing.
+STATE FILE: ~/.claude/scheduled-tasks/chore-cycler/state.json — {"lastRunUtc":"<iso>","processedIds":[]}. Create with lastRunUtc = 24h ago and empty processedIds if missing.
 
 STEPS
 1. Load state.
