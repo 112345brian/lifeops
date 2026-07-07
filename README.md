@@ -68,6 +68,19 @@ Alerts come back to you on a **separate** topic (subscribe to it in the ntfy app
 ### Confidence-gated categorization (YNAB)
 Transactions are categorized only above a confidence bar: HIGH (a repeat payee in your history) auto-assigns; MEDIUM gets a sanity double-check (a $0.50 charge won't be tagged "Groceries"); LOW is left for you. An uncategorized transaction always beats a wrong one.
 
+### Action log — every mutation, in one place
+Every agent appends one line to a shared, append-only log — `~/.claude/scheduled-tasks/action-log.jsonl` — immediately after any call that creates, updates, deletes, or completes a FlowSavvy item, a Google Calendar event, or a YNAB transaction/category. This is what makes "why does this task exist" or "what deleted that event" answerable later instead of guesswork.
+
+Format (one JSON object per line, create the file/dir if missing):
+```
+{"ts":"<UTC ISO8601>","skill":"<agent-name>","action":"create_task|update_task|delete_item|complete_task|create_event|delete_event|ynab_categorize|ynab_approve|ynab_cover","id":"<item id, if any>","title":"<title or payee>","detail":"<one-line why>"}
+```
+Written via Bash, e.g.:
+```
+mkdir -p ~/.claude/scheduled-tasks && printf '%s\n' "{\"ts\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"skill\":\"chore-cycler\",\"action\":\"create_task\",\"id\":\"19746159\",\"title\":\"Car wash\",\"detail\":\"next occurrence after completion\"}" >> ~/.claude/scheduled-tasks/action-log.jsonl
+```
+To debug: `tail -n 200 ~/.claude/scheduled-tasks/action-log.jsonl | jq .` or `grep -i '<title>' ~/.claude/scheduled-tasks/action-log.jsonl`. If something exists that no line in this log explains, it wasn't created by one of these agents.
+
 ## External pieces & setup
 
 To run this you need:

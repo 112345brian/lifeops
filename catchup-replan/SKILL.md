@@ -17,6 +17,7 @@ STEPS
 3. If there IS a fresh "catchup":
    a. list_items itemType=task completed=false → everything open (coursework + life), with dueDateTime, durationMinutes.
    b. Triage by (deadline proximity × size/importance). For the most urgent/important items, update_task priority to asap/high; for clearly optional or distant items, set priority low so they yield.
+      LOG (see README's action log convention): append one `update_task` line per priority change (or one summary line listing the ids, if many).
    c. recalculate with reschedulePastTasks=true to fully re-pack.
    d. POST a summary to the alerts topic: what you prioritized and what you pushed down.
 4. Set lastHandled=now, save state.json.

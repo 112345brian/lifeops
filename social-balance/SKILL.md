@@ -18,4 +18,5 @@ STEPS (run EVERY day)
 
 STEPS (run only SUNDAYS + THURSDAYS, in addition)
 4. PROTECT: if there is no incomplete upcoming "Partner time" task this week, create_task "Partner time", listId 6784, schedulingHoursId 427991, durationMinutes 120, dueDateTime end of this week. Likewise create "Friends" (120 min) if none exists. recalculate. (These are suggested slots The user can drag/adjust — timing for Partner often needs his coordination.)
+   LOG (see README's action log convention): append a `create_task` line for each task created.
 5. NUDGE: if days-since-Partner ≥ 7 → POST a warm nudge ("It's been 8 days with Partner — put a slot in FlowSavvy for you two."). If days-since-friend ≥ 7 → similar. If both fine, POST nothing.
