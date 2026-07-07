@@ -24,4 +24,5 @@ STEPS
      • moderate sleep or mild recovery → 60 min, priority normal
      • poor-ish but not skipping → 45 min, priority low
 5. recalculate. Then get_schedule for today: if FlowSavvy did NOT place the gym (it yielded to deadlines), that's correct behavior — note it.
+   LOG (see README's action log convention): if you created a task, append a `create_task` line for it.
 6. Optionally POST a one-line summary to the alerts topic (e.g. "Gym queued 75m, evenings (2/4 this wk)" or "No gym — deadline crunch + 4.5h sleep"). Don't ping for routine days.

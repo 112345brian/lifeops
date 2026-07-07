@@ -25,8 +25,10 @@ STEP 2 — CATEGORIZE (confidence-gated): GET categories; GET ~120 days of appro
 Never assign below MEDIUM confidence. When unsure, leave it for The user — an uncategorized transaction is always better than a wrong one.
 
 STEP 3 — APPROVE: PATCH approved=true for every unapproved transaction that now HAS a category (bulk PATCH /budgets/last-used/transactions). Leave any still-uncategorized transaction UNAPPROVED for The user to handle.
+LOG (see README's action log convention): append one `ynab_categorize` line per transaction categorized+approved (payee in `title`, category in `detail`) — or one summary line if the batch is large.
 
 STEP 4 — COVER OVERSPEND: GET /budgets/last-used/months/current. The cover-source category name is in ~/.claude/scheduled-tasks/ynab-categorizer/cover-from.txt if it exists; else use a category named "Buffer", "Emergency", or "Stuff I Forgot to Budget" if present. For each category with a negative balance this month, move enough BUDGETED dollars from the cover-source to bring it to 0 — but only while the source stays ≥ 0 (never drive the source negative). Apply via PATCH /budgets/last-used/months/current/categories/{id} adjusting budgeted. If there's no valid source or insufficient funds, skip and just report it.
+LOG: append a `ynab_cover` line for each category covered, noting the amount moved and source in `detail`.
 
 STEP 5 — NOTIFY: curl -d "..." https://ntfy.sh/<NTFY_ALERTS_TOPIC> with a one-line summary, mentioning only nonzero parts: "YNAB: imported X · categorized+approved Y · Z left for review · covered $W overspend."
 

@@ -21,3 +21,4 @@ STEPS
    - create_task title "🎂 <name>'s birthday", listId 6784, durationMinutes 10, dueDateTime = today 09:00, canBeStartedAt = today 00:00, priority high, isAutoIgnored=false, notes "Wish them happy birthday."
    - add "<name>-<year>-dayof" to state.created.
 5. If you created anything, recalculate. Save state.json (prune entries older than ~2 years).
+   LOG (see README's action log convention): append a `create_task` line for each task created.

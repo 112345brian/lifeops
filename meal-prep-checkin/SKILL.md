@@ -17,5 +17,6 @@ STEPS
    - create_task "Groceries", listId 6784, schedulingHoursId 427988, durationMinutes 60, dueDateTime ~3 days out. Capture the returned id.
    - create_task "Meal prep", listId 6784, schedulingHoursId 427988, durationMinutes 120, dueDateTime ~4 days out, blockedByIds=[<groceries id>] (so cooking is scheduled only after shopping).
 4. recalculate.
+   LOG (see README's action log convention): append a `create_task` line for both the Groceries and Meal prep tasks.
 5. POST one line to alerts: "Meal-prep week — added Groceries + cook to FlowSavvy. Delete them if you've still got leftovers."
 6. Never duplicate: if a past Groceries/Meal prep is still incomplete, leave it for FlowSavvy to reschedule rather than adding more.

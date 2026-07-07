@@ -21,6 +21,7 @@ STEPS
    d. canBeStartedAt = nextDue minus min(3, N-1) days (the lead window each cycle).
    e. create_task a NEW single (non-recurring) task: same title, same durationMinutes and minLengthMinutes, same listId, same priority, same schedulingHoursId (if the completed task had a non-default one), isAutoIgnored=false, notes carrying the SAME [cycle:Nd] tag, dueDateTime=nextDue, canBeStartedAt as computed. Do NOT set recurrenceRule.
    f. Add the completed task's id to state.processedIds.
+   LOG (see README's action log convention): append a `create_task` line for the new occurrence, with `detail` noting which completed task id triggered it.
 4. If you created any tasks, call recalculate.
 5. Save state: lastRunUtc = now (UTC), processedIds updated (keep only the most recent ~300 ids to bound size).
 

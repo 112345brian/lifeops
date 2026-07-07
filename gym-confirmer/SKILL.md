@@ -17,3 +17,4 @@ STEPS
 4. If a "gym" ping was found AND an incomplete Gym task exists → complete_task(id), then recalculate. Done.
 5. If NO ping and an incomplete Gym task for that past day still exists → he didn't go: delete_item(id), then recalculate. (Completed-only counting keeps the weekly floor honest, and this prevents FlowSavvy from rescheduling a missed past session.)
 6. If the ntfy request errors, do nothing (a failed check ≠ a missed session).
+7. LOG (see README's action log convention): append a `complete_task` or `delete_item` line for whichever action you took in steps 4–5.
